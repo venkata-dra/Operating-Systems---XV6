@@ -1,0 +1,16 @@
+# This is how you write comments
+# Use gcc as a compiler
+CC=gcc
+# CFLAGS will be the options we'll pass to the compiler
+CFLAGS=-Wall
+
+all: hello
+
+hello: main.o
+	$(CC) $(CFLAGS) main.o -o hello
+
+main.o: main.c
+	$(CC) -c $(CFLAGS) main.c
+
+clean:
+	rm *.o hello
